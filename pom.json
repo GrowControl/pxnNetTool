@@ -1,0 +1,41 @@
+{
+	"Name": "pxnNettet-Tool",
+	"ArtifactId": "nettet-tool",
+	"GroupId": "com.poixson.nettet",
+	"Version": "1.0.0",
+	"URL": "http://poixson.com",
+	"Github-Path": "GrowControl/pxnNettetTool",
+	"Org-Name": "PoiXson",
+	"Main-Class": "com.poixson.nettet.tool.Main",
+	"Shade": "yes",
+	"Deps": {
+		"jUnixSocket": {
+			"GroupId": "no.fiken.oss.junixsocket",
+			"ArtifactId": "junixsocket-common",
+			"Version": "1.0.2"
+		},
+		"jUnixSocket-natives": {
+			"GroupId": "no.fiken.oss.junixsocket",
+			"ArtifactId": "junixsocket-native-common",
+			"Version": "1.0.2"
+		},
+		"pxnCommon": {
+			"GroupId": "com.poixson",
+			"ArtifactId": "common",
+			"Name": "pxnCommon",
+			"Version": "3.6.1"
+		},
+		"serial": {
+			"GroupId": "com.poixson.serial",
+			"ArtifactId": "pxnserial",
+			"Name": "pxnSerial",
+			"Version": "1.0.0"
+		},
+		"nettet": {
+			"GroupId": "com.poixson.nettet",
+			"ArtifactId": "nettet",
+			"Name": "pxnNettet",
+			"Version": "1.0.0"
+		}
+	}
+}
