@@ -1,4 +1,4 @@
-<!-- Generated on: December 8, 2017 04:45 UTC -->
+<!-- Generated on: December 12, 2017 17:25 UTC -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<name>pxnNettet-Tool</name>
 	<artifactId>nettet-tool</artifactId>
-	<groupId>com.poixson.nettet</groupId>
+	<groupId>com.poixson.nettet.tool</groupId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<url>http://poixson.com</url>
@@ -37,6 +37,7 @@
 		<pxnCommon-version>3.6.1</pxnCommon-version>
 		<serial-version>1.0.0</serial-version>
 		<nettet-version>1.0.0</nettet-version>
+		<nettet-serial-version>1.0.0</nettet-serial-version>
 
 		<git-commit-id-plugin-version>2.2.2</git-commit-id-plugin-version>
 
@@ -206,6 +207,11 @@
 			<groupId>com.poixson.nettet</groupId>
 			<artifactId>nettet</artifactId>
 			<version>${nettet-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.poixson</groupId>
+			<artifactId>pxnnettetserial</artifactId>
+			<version>${nettet-serial-version}</version>
 		</dependency>
 
 	</dependencies>

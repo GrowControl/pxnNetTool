@@ -1,7 +1,7 @@
 {
 	"Name": "pxnNettet-Tool",
 	"ArtifactId": "nettet-tool",
-	"GroupId": "com.poixson.nettet",
+	"GroupId": "com.poixson.nettet.tool",
 	"Version": "1.0.0",
 	"URL": "http://poixson.com",
 	"Github-Path": "GrowControl/pxnNettetTool",
@@ -35,6 +35,12 @@
 			"GroupId": "com.poixson.nettet",
 			"ArtifactId": "nettet",
 			"Name": "pxnNettet",
+			"Version": "1.0.0"
+		},
+		"nettet-serial": {
+			"GroupId": "com.poixson",
+			"ArtifactId": "pxnnettetserial",
+			"Name": "pxnNettet-Serial",
 			"Version": "1.0.0"
 		}
 	}
