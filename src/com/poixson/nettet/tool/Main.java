@@ -1,8 +1,8 @@
 package com.poixson.nettet.tool;
 
-import com.poixson.nettet.NettetLibraryLoader;
-import com.poixson.serial.SerialLibraryLoader;
 import com.poixson.utils.Keeper;
+import com.poixson.utils.NativeAutoLoader;
+import com.poixson.utils.NativeAutoLoader.AutoMode;
 
 
 public class Main {
@@ -21,17 +21,25 @@ public class Main {
 //		final ShellArgsTool argsTool = ShellArgsTool.Init(argsArray);
 		// load libraries
 		{
-			// load unix socket library
-			NettetLibraryLoader.get()
-				.loadUnixSocketLibrary();
-			// load serial library
-			final SerialLibraryLoader loader =
-				SerialLibraryLoader.get();
-			loader.loadSerialLibrary();
+			final NativeAutoLoader loader =
+				NativeAutoLoader.getNew(AutoMode.AUTO_MODE_SELF_CONTAINED)
+					.setDefaults(ToolApp.class)
+					.setLocalLibPath("lib")
+					.setResourcesPath("lib/linux64");
 			// load d2xx open library
-			loader.loadD2xxOpenLibrary();
+			loader.clone()
+				.load("libftdi-open-linux64.so");
 			// load d2xx prop library
-			loader.loadD2xxPropLibrary();
+			loader.clone()
+				.load("libftdi-prop-linux64.so");
+			// load serial library
+			loader.clone()
+				.load("pxnserial-linux64.so");
+			// load unix socket library
+			loader.clone()
+//TODO: fix this path
+				.setResourcesPath("lib/amd64-Linux-gpp/jni")
+				.load("libjunixsocket-native-1.0.2.so");
 		}
 		app = new ToolApp();
 		app.start();
