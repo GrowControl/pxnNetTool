@@ -6,6 +6,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
+import javax.swing.JMenuBar;
 import javax.swing.SwingUtilities;
 
 import com.poixson.app.gui.xWindow;
@@ -52,6 +53,15 @@ public class ToolWindow extends xWindow {
 		this.setLayout(layout);
 		ToolApp.get()
 			.register(this);
+		this.build();
+	}
+
+
+
+	protected void build() {
+		// menu bar
+		final JMenuBar menubar = new ToolMenuBar();
+		this.setJMenuBar(menubar);
 	}
 
 
