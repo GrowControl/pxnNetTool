@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import com.poixson.app.xApp;
 import com.poixson.app.steps.xAppStep;
 import com.poixson.app.steps.xAppStep.StepType;
-import com.poixson.nettet.tool.gui.ToolWindow;
+import com.poixson.nettet.tool.gui.tool.ToolWindow;
 import com.poixson.utils.ThreadUtils;
 
 

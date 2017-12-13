@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool.gui;
+package com.poixson.nettet.tool.gui.tool;
 
 import java.awt.EventQueue;
 import java.awt.LayoutManager;
