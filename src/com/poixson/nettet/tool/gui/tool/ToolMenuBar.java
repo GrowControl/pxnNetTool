@@ -58,11 +58,17 @@ public class ToolMenuBar extends JMenuBar {
 		{
 			// connect
 			this.menuFileConnect =
-				addMenuItem( this.fileMenu, this.fileListener, "Connect", KeyEvent.VK_C );
+				addMenuItem( this.fileMenu, this.fileListener, "Connect..", KeyEvent.VK_C );
+			this.menuFileConnect.setAccelerator(
+				KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.ALT_MASK)
+			);
 			// close
 			this.menuFileClose =
 				addMenuItem( this.fileMenu, this.fileListener, "Close",   KeyEvent.VK_C );
 			this.menuFileClose.setVisible(false);
+			this.menuFileClose.setAccelerator(
+				KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.ALT_MASK)
+			);
 			// ---
 			this.fileMenu.addSeparator();
 			// exit
@@ -88,7 +94,8 @@ public class ToolMenuBar extends JMenuBar {
 			// unix socket client
 			this.menuTransUnixClient =
 				addMenuRadio( this.transMenu, group, this.transListener, "Unix Socket Client", KeyEvent.VK_U );
-
+			// ---
+			this.transMenu.addSeparator();
 			// tcp server
 			this.menuTransTcpServer =
 				addMenuRadio( this.transMenu, group, this.transListener, "TCP Server", KeyEvent.VK_C );
@@ -98,7 +105,8 @@ public class ToolMenuBar extends JMenuBar {
 			// unix socket server
 			this.menuTransUnixServer =
 				addMenuRadio( this.transMenu, group, this.transListener, "Unix Socket Server", KeyEvent.VK_X );
-
+			// ---
+			this.transMenu.addSeparator();
 			// serial
 			this.menuTransSerial =
 				addMenuRadio( this.transMenu, group, this.transListener, "Serial", KeyEvent.VK_S );
@@ -131,7 +139,7 @@ public class ToolMenuBar extends JMenuBar {
 		{
 			// about
 			this.menuHelpAbout =
-				addMenuItem( this.helpMenu, this.helpListener, "About", KeyEvent.VK_A );
+				addMenuItem( this.helpMenu, this.helpListener, "About..", KeyEvent.VK_A );
 		}
 		this.add(this.helpMenu);
 	}
@@ -170,12 +178,12 @@ public class ToolMenuBar extends JMenuBar {
 
 
 	// file menu listener
-	protected static class FileMenuListener implements ActionListener {
+	protected class FileMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent event) {
 			final String text = event.getActionCommand();
 			switch (text) {
-			case "Connect":
+			case "Connect..":
 				
 				break;
 			case "Close":
@@ -193,7 +201,7 @@ public class ToolMenuBar extends JMenuBar {
 
 
 	// transport menu listener
-	protected static class TransportMenuListener implements ActionListener {
+	protected class TransportMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent event) {
 			final String text = event.getActionCommand();
@@ -228,7 +236,7 @@ public class ToolMenuBar extends JMenuBar {
 
 
 	// protocol menu listener
-	protected static class ProtocolMenuListener implements ActionListener {
+	protected class ProtocolMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent event) {
 			final String text = event.getActionCommand();
@@ -254,12 +262,12 @@ public class ToolMenuBar extends JMenuBar {
 
 
 	// help menu listener
-	protected static class HelpMenuListener implements ActionListener {
+	protected class HelpMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent event) {
 			final String text = event.getActionCommand();
 			switch (text) {
-			case "About":
+			case "About..":
 				
 				break;
 			default:
