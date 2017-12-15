@@ -42,6 +42,12 @@
 			"ArtifactId": "pxnnettetserial",
 			"Name": "pxnNettet-Serial",
 			"Version": "1.0.0"
+		},
+		"mig-layout": {
+			"GroupId": "com.miglayout",
+			"ArtifactId": "miglayout-swing",
+			"Name": "MigLayout-Swing",
+			"Version": "5.0"
 		}
 	}
 }

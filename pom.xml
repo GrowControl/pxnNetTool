@@ -1,4 +1,4 @@
-<!-- Generated on: December 12, 2017 17:25 UTC -->
+<!-- Generated on: December 15, 2017 12:07 UTC -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -38,6 +38,7 @@
 		<serial-version>1.0.0</serial-version>
 		<nettet-version>1.0.0</nettet-version>
 		<nettet-serial-version>1.0.0</nettet-serial-version>
+		<mig-layout-version>5.0</mig-layout-version>
 
 		<git-commit-id-plugin-version>2.2.2</git-commit-id-plugin-version>
 
@@ -212,6 +213,11 @@
 			<groupId>com.poixson</groupId>
 			<artifactId>pxnnettetserial</artifactId>
 			<version>${nettet-serial-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swing</artifactId>
+			<version>${mig-layout-version}</version>
 		</dependency>
 
 	</dependencies>
