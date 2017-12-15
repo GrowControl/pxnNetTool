@@ -12,9 +12,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import com.poixson.utils.Utils;
+
 
 public class ToolMenuBar extends JMenuBar {
 	private static final long serialVersionUID = 1L;
+
+	protected final ToolWindow window;
 
 	// file menu
 	protected final JMenu fileMenu;
@@ -49,8 +53,9 @@ public class ToolMenuBar extends JMenuBar {
 
 
 
-	public ToolMenuBar() {
+	public ToolMenuBar(final ToolWindow window) {
 		super();
+		this.window = window;
 		// file menu
 		this.fileMenu = new JMenu("File");
 		this.fileMenu.setMnemonic(KeyEvent.VK_F);
@@ -190,7 +195,7 @@ public class ToolMenuBar extends JMenuBar {
 				
 				break;
 			case "Exit":
-				
+				Utils.safeClose(ToolMenuBar.this.window);
 				break;
 			default:
 				throw new RuntimeException("Unknown menu item: "+text);
