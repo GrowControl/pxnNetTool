@@ -36,7 +36,8 @@ public class ToolApp extends xApp {
 	@SuppressWarnings("resource")
 	@xAppStep(type=StepType.STARTUP, title="ShowWindow", priority=1000)
 	public void __STARTUP_show() {
-		new ToolWindow();
+		final ToolWindow tool = new ToolWindow();
+		tool.display();
 	}
 
 
@@ -66,8 +67,13 @@ public class ToolApp extends xApp {
 				.add(tool);
 	}
 	public boolean unregister(final ToolWindow tool) {
-		return this.tools
+		final boolean result =
+			this.tools
 				.remove(tool);
+		if (this.tools.isEmpty()) {
+			this.stop();
+		}
+		return result;
 	}
 
 
