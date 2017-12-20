@@ -9,7 +9,6 @@ import java.util.concurrent.FutureTask;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
@@ -28,6 +27,9 @@ public class ToolWindow extends xWindow {
 
 	public static final int DEFAULT_SIZE_X = 750;
 	public static final int DEFAULT_SIZE_Y = 600;
+
+	protected final ToolMenuBar menubar;
+	protected final JButton sendButton;
 
 
 
@@ -68,21 +70,16 @@ public class ToolWindow extends xWindow {
 		this.setTitle(title);
 		ToolApp.get()
 			.register(this);
-		this.build();
+		// build the window
 		this.setSize(DEFAULT_SIZE_X, DEFAULT_SIZE_Y);
-	}
-
-
-
-	protected void build() {
 		this.setResizable(true);
 		this.setTitle("<closed> "+ToolApp.get().getFullTitle());
 		// layout manager
 		final MigLayout mainLayout = new MigLayout("inset 3, wrap 1", "[fill, grow]");
 		this.setLayout(mainLayout);
 		// menu bar
-		final JMenuBar menubar = new ToolMenuBar(this);
-		this.setJMenuBar(menubar);
+		this.menubar = new ToolMenuBar(this);
+		this.setJMenuBar(this.menubar);
 		// received box
 		{
 			final JPanel receivedPanel = new JPanel();
@@ -106,11 +103,10 @@ public class ToolWindow extends xWindow {
 			sendTextbox.setBorder(new LineBorder(Color.GRAY, 1, false));
 			sendPanel.add(sendTextbox, BorderLayout.CENTER);
 			// send button
-			final JButton sendButton = new JButton();
-			sendButton.setEnabled(false);
+			this.sendButton = new JButton();
 			final TextIcon textIcon =
 				new TextIcon(
-					sendButton,
+					this.sendButton,
 					"Send",
 					TextIcon.Layout.HORIZONTAL
 				);
@@ -119,8 +115,8 @@ public class ToolWindow extends xWindow {
 					textIcon,
 					RotatedIcon.Rotate.DOWN
 				);
-			sendButton.setIcon(rotatedIcon);
-			sendPanel.add(sendButton, BorderLayout.EAST);
+			this.sendButton.setIcon(rotatedIcon);
+			sendPanel.add(this.sendButton, BorderLayout.EAST);
 			this.add(sendPanel, "h 50%, span, wrap");
 		}
 		// status bar
