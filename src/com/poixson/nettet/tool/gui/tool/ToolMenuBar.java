@@ -12,6 +12,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import com.poixson.nettet.EasyPipeline;
+import com.poixson.nettet.EasyPipeline.PipelineType;
 import com.poixson.nettet.tool.ToolApp;
 import com.poixson.utils.Utils;
 
@@ -248,16 +250,28 @@ public class ToolMenuBar extends JMenuBar {
 			final String text = event.getActionCommand();
 			switch (text) {
 			case "HTTP":
-				
+				ToolMenuBar.this.window
+					.setPipeline(
+						new EasyPipeline(PipelineType.HTTP)
+					);
 				break;
 			case "HTTPS":
-				
+				ToolMenuBar.this.window
+					.setPipeline(
+						new EasyPipeline(PipelineType.HTTPS)
+					);
 				break;
 			case "JSON":
-				
+				ToolMenuBar.this.window
+					.setPipeline(
+						new EasyPipeline(PipelineType.JSON)
+					);
 				break;
 			case "MQTT":
-				
+				ToolMenuBar.this.window
+					.setPipeline(
+						new EasyPipeline(PipelineType.MQTT)
+					);
 				break;
 			default:
 				throw new RuntimeException("Unknown menu item: "+text);
