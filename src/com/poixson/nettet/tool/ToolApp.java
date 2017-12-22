@@ -68,6 +68,21 @@ public class ToolApp extends xApp {
 
 
 
+	@xAppStep(type=StepType.SHUTDOWN, title="exit", priority=2)
+	public void __SHUTDOWN_exit() {
+		final Thread stopThread =
+			new Thread() {
+				@Override
+				public void run() {
+					ThreadUtils.Sleep(250L);
+					System.exit(0);
+				}
+			};
+		stopThread.start();
+	}
+
+
+
 	public boolean register(final ToolWindow tool) {
 		return this.tools
 				.add(tool);
