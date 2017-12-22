@@ -2,18 +2,24 @@ package com.poixson.nettet.tool;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.atomic.AtomicReference;
 
 import com.poixson.app.xApp;
 import com.poixson.app.steps.xAppStep;
 import com.poixson.app.steps.xAppStep.StepType;
+import com.poixson.nettet.tool.gui.about.AboutWindow;
 import com.poixson.nettet.tool.gui.tool.ToolWindow;
 import com.poixson.utils.ThreadUtils;
+import com.poixson.utils.Utils;
 
 
 public class ToolApp extends xApp {
 
 	private final CopyOnWriteArraySet<ToolWindow> tools =
 			new CopyOnWriteArraySet<ToolWindow>();
+
+	private final AtomicReference<AboutWindow> aboutWindow =
+			new AtomicReference<AboutWindow>(null);
 
 
 
@@ -74,6 +80,37 @@ public class ToolApp extends xApp {
 			this.stop();
 		}
 		return result;
+	}
+
+
+
+	// about window
+	public void showAbout() {
+		// existing window
+		{
+			final AboutWindow about = this.aboutWindow.get();
+			if (about != null) {
+				about.setVisible(true);
+				about.requestFocus();
+				return;
+			}
+		}
+		// new window
+		{
+			AboutWindow about = new AboutWindow();
+			if (!this.aboutWindow.compareAndSet(null, about)) {
+				about = this.aboutWindow.get();
+			}
+			if (about == null) throw new NullPointerException("Failed to get about window");
+			about.setVisible(true);
+			about.requestFocus();
+		}
+	}
+	public void closeAbout() {
+		final AboutWindow about = this.aboutWindow.getAndSet(null);
+		if (about == null)
+			return;
+		Utils.safeClose(about);
 	}
 
 

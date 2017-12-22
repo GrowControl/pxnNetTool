@@ -12,6 +12,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import com.poixson.nettet.tool.ToolApp;
 import com.poixson.utils.Utils;
 
 
@@ -273,7 +274,8 @@ public class ToolMenuBar extends JMenuBar {
 			final String text = event.getActionCommand();
 			switch (text) {
 			case "About..":
-				
+				final ToolApp app = ToolApp.get();
+				app.showAbout();
 				break;
 			default:
 				throw new RuntimeException("Unknown menu item: "+text);
