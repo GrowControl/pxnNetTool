@@ -44,6 +44,7 @@ public class ToolMenuBar extends JMenuBar {
 	// protocol menu
 	protected final JMenu protocolMenu;
 	protected final ProtocolMenuListener protocolListener;
+	protected final JRadioButtonMenuItem menuProtocolRaw;
 	protected final JRadioButtonMenuItem menuProtocolHttp;
 	protected final JRadioButtonMenuItem menuProtocolHttps;
 	protected final JRadioButtonMenuItem menuProtocolJson;
@@ -126,6 +127,9 @@ public class ToolMenuBar extends JMenuBar {
 		this.protocolListener = new ProtocolMenuListener();
 		{
 			final ButtonGroup group = new ButtonGroup();
+			// raw
+			this.menuProtocolRaw =
+				addMenuRadio( this.protocolMenu, group, this.protocolListener, "RAW", KeyEvent.VK_R );
 			// http
 			this.menuProtocolHttp =
 				addMenuRadio( this.protocolMenu, group, this.protocolListener, "HTTP", KeyEvent.VK_H );
@@ -249,6 +253,12 @@ public class ToolMenuBar extends JMenuBar {
 		public void actionPerformed(final ActionEvent event) {
 			final String text = event.getActionCommand();
 			switch (text) {
+			case "RAW":
+				ToolMenuBar.this.window
+					.setPipeline(
+						new EasyPipeline(PipelineType.RAW)
+					);
+				break;
 			case "HTTP":
 				ToolMenuBar.this.window
 					.setPipeline(
