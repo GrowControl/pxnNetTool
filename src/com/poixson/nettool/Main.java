@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool;
+package com.poixson.nettool;
 
 import com.poixson.utils.Keeper;
 import com.poixson.utils.NativeAutoLoader;

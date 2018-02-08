@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool.gui.tool;
+package com.poixson.nettool.gui.tool;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

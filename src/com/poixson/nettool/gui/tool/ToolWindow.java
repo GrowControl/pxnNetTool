@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool.gui.tool;
+package com.poixson.nettool.gui.tool;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

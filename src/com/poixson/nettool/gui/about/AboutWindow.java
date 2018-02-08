@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool.gui.about;
+package com.poixson.nettool.gui.about;
 
 import com.poixson.app.gui.xWindow;
 

@@ -1,4 +1,4 @@
-package com.poixson.nettet.tool;
+package com.poixson.nettool;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
