@@ -1,4 +1,4 @@
-<!-- Generated on: February 8, 2018 16:04 UTC -->
+<!-- Generated on: February 8, 2018 16:18 UTC -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -33,6 +33,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<pxnCommon-Core-version>3.6.2</pxnCommon-Core-version>
+		<pxnCommon-App-version>3.6.2</pxnCommon-App-version>
 		<serial-version>1.0.0</serial-version>
 		<nettet-version>1.0.0</nettet-version>
 		<nettet-serial-version>1.0.0</nettet-serial-version>
@@ -188,6 +189,11 @@
 			<groupId>com.poixson</groupId>
 			<artifactId>common-core</artifactId>
 			<version>${pxnCommon-Core-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.poixson</groupId>
+			<artifactId>common-app</artifactId>
+			<version>${pxnCommon-App-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.poixson.serial</groupId>
