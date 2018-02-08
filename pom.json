@@ -9,21 +9,11 @@
 	"Main-Class": "com.poixson.nettool.Main",
 	"Shade": "yes",
 	"Deps": {
-		"jUnixSocket": {
-			"GroupId": "no.fiken.oss.junixsocket",
-			"ArtifactId": "junixsocket-common",
-			"Version": "1.0.2"
-		},
-		"jUnixSocket-natives": {
-			"GroupId": "no.fiken.oss.junixsocket",
-			"ArtifactId": "junixsocket-native-common",
-			"Version": "1.0.2"
-		},
-		"pxnCommon": {
+		"pxnCommon-Core": {
 			"GroupId": "com.poixson",
-			"ArtifactId": "common",
-			"Name": "pxnCommon",
-			"Version": "3.6.1"
+			"ArtifactId": "common-core",
+			"Name": "pxnCommon-Core",
+			"Version": "3.6.2"
 		},
 		"serial": {
 			"GroupId": "com.poixson.serial",
@@ -42,6 +32,16 @@
 			"ArtifactId": "pxnnettetserial",
 			"Name": "pxnNettet-Serial",
 			"Version": "1.0.0"
+		},
+		"jUnixSocket": {
+			"GroupId": "no.fiken.oss.junixsocket",
+			"ArtifactId": "junixsocket-common",
+			"Version": "1.0.2"
+		},
+		"jUnixSocket-natives": {
+			"GroupId": "no.fiken.oss.junixsocket",
+			"ArtifactId": "junixsocket-native-common",
+			"Version": "1.0.2"
 		},
 		"mig-layout": {
 			"GroupId": "com.miglayout",

@@ -1,27 +1,27 @@
-<!-- Generated on: December 15, 2017 12:07 UTC -->
+<!-- Generated on: February 8, 2018 16:04 UTC -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<name>pxnNettet-Tool</name>
-	<artifactId>nettet-tool</artifactId>
-	<groupId>com.poixson.nettet.tool</groupId>
+	<name>pxnNetTool</name>
+	<artifactId>nettool</artifactId>
+	<groupId>com.poixson.nettool</groupId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<url>http://poixson.com</url>
 
 	<scm>
-		<url>https://github.com/GrowControl/pxnNettetTool</url>
-		<connection>scm:git:https://github.com/GrowControl/pxnNettetTool.git</connection>
-		<developerConnection>scm:git:git@github.com:GrowControl/pxnNettetTool.git</developerConnection>
+		<url>https://github.com/GrowControl/pxnNetTool</url>
+		<connection>scm:git:https://github.com/GrowControl/pxnNetTool.git</connection>
+		<developerConnection>scm:git:git@github.com:GrowControl/pxnNetTool.git</developerConnection>
 	</scm>
 	<ciManagement>
 		<url>ci.poixson.com</url>
 		<system>pxnci</system>
 	</ciManagement>
 	<issueManagement>
-		<url>https://github.com/GrowControl/pxnNettetTool/issues</url>
+		<url>https://github.com/GrowControl/pxnNetTool/issues</url>
 		<system>github</system>
 	</issueManagement>
 
@@ -32,12 +32,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<jUnixSocket-version>1.0.2</jUnixSocket-version>
-		<jUnixSocket-natives-version>1.0.2</jUnixSocket-natives-version>
-		<pxnCommon-version>3.6.1</pxnCommon-version>
+		<pxnCommon-Core-version>3.6.2</pxnCommon-Core-version>
 		<serial-version>1.0.0</serial-version>
 		<nettet-version>1.0.0</nettet-version>
 		<nettet-serial-version>1.0.0</nettet-serial-version>
+		<jUnixSocket-version>1.0.2</jUnixSocket-version>
+		<jUnixSocket-natives-version>1.0.2</jUnixSocket-natives-version>
 		<mig-layout-version>5.0</mig-layout-version>
 
 		<git-commit-id-plugin-version>2.2.2</git-commit-id-plugin-version>
@@ -122,7 +122,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.poixson.nettet.tool.Main</mainClass>
+							<mainClass>com.poixson.nettool.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -185,19 +185,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>no.fiken.oss.junixsocket</groupId>
-			<artifactId>junixsocket-common</artifactId>
-			<version>${jUnixSocket-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>no.fiken.oss.junixsocket</groupId>
-			<artifactId>junixsocket-native-common</artifactId>
-			<version>${jUnixSocket-natives-version}</version>
-		</dependency>
-		<dependency>
 			<groupId>com.poixson</groupId>
-			<artifactId>common</artifactId>
-			<version>${pxnCommon-version}</version>
+			<artifactId>common-core</artifactId>
+			<version>${pxnCommon-Core-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.poixson.serial</groupId>
@@ -213,6 +203,16 @@
 			<groupId>com.poixson</groupId>
 			<artifactId>pxnnettetserial</artifactId>
 			<version>${nettet-serial-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>no.fiken.oss.junixsocket</groupId>
+			<artifactId>junixsocket-common</artifactId>
+			<version>${jUnixSocket-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>no.fiken.oss.junixsocket</groupId>
+			<artifactId>junixsocket-native-common</artifactId>
+			<version>${jUnixSocket-natives-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.miglayout</groupId>
