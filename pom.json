@@ -1,12 +1,12 @@
 {
-	"Name": "pxnNettet-Tool",
-	"ArtifactId": "nettet-tool",
-	"GroupId": "com.poixson.nettet.tool",
+	"Name": "pxnNetTool",
+	"ArtifactId": "nettool",
+	"GroupId": "com.poixson.nettool",
 	"Version": "1.0.0",
 	"URL": "http://poixson.com",
-	"Github-Path": "GrowControl/pxnNettetTool",
+	"Github-Path": "GrowControl/pxnNetTool",
 	"Org-Name": "PoiXson",
-	"Main-Class": "com.poixson.nettet.tool.Main",
+	"Main-Class": "com.poixson.nettool.Main",
 	"Shade": "yes",
 	"Deps": {
 		"jUnixSocket": {
