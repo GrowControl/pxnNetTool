@@ -21,6 +21,12 @@
 			"Name": "pxnCommon-App",
 			"Version": "3.6.2"
 		},
+		"pxnCommon-Shell": {
+			"GroupId": "com.poixson",
+			"ArtifactId": "common-shell",
+			"Name": "pxnCommon-Shell",
+			"Version": "3.6.2"
+		},
 		"serial": {
 			"GroupId": "com.poixson.serial",
 			"ArtifactId": "pxnserial",
